@@ -1,5 +1,5 @@
 import { Game, Player } from './types';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'; // Ensure uuid is installed
 
 export function createGame(hostPlayer: Player): Game {
   return {
