@@ -31,7 +31,7 @@ export function calculatePossibleScores(dice: number[]): Record<string, number> 
   }
 
   // Small straight
-  const uniqueDice = [...new Set(dice)].sort();
+  const uniqueDice = Array.from(new Set(dice)).sort();
   let maxSequence = 1;
   let currentSequence = 1;
   for (let i = 1; i < uniqueDice.length; i++) {
