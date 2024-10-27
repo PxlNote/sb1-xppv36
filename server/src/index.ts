@@ -6,7 +6,13 @@ import { GameState, Player } from './types';
 import { createGame, joinGame, rollDice, toggleHold, submitScore } from './game-logic';
 
 const app = express();
-app.use(cors());
+
+// Update CORS configuration
+app.use(cors({
+  origin: 'https://yahtzee-online-server.onrender.com', // Replace with your client app's URL
+  methods: ['GET', 'POST'],
+  credentials: true // Allow credentials if needed
+}));
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Yahtzee Game Server!');
