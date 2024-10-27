@@ -9,7 +9,7 @@ const app = express();
 
 // Update CORS configuration
 app.use(cors({
-  origin: 'https://yahtzee-online-server.onrender.com', // Replace with your client app's URL
+  origin: '*', // Replace with your client app's URL
   methods: ['GET', 'POST'],
   credentials: true // Allow credentials if needed
 }));
