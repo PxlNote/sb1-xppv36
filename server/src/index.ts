@@ -9,7 +9,7 @@ const app = express();
 
 // Update CORS configuration
 app.use(cors({
-  origin: '*', // Replace with your client app's URL
+  origin: 'https://yahtzee-final.vercel.app/', // Replace with your client app's URL
   methods: ['GET', 'POST'],
   credentials: true // Allow credentials if needed
 }));
