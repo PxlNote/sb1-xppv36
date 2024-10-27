@@ -8,6 +8,10 @@ import { createGame, joinGame, rollDice, toggleHold, submitScore } from './game-
 const app = express();
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Yahtzee Game Server!');
+});
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
