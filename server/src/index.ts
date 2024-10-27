@@ -59,7 +59,12 @@ io.on('connection', (socket) => {
       io.to(gameId).emit('game_updated', gameState.games[gameId]);
       callback({ playerId: player.id });
     } catch (error) {
-      callback({ error: error.message });
+      // Type assertion to handle the error correctly
+      if (error instanceof Error) {
+        callback({ error: error.message });
+      } else {
+        callback({ error: 'An unknown error occurred' });
+      }
     }
   });
 
